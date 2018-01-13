@@ -21,8 +21,8 @@ You will need the following installed **globally** on your machine first:
 2. Clone this repo into that directory.
 3. Remove the existing .git folder (if it exists) so you don't overwrite things here.
 4. Do an 'npm install' and 'npm init' to set up your project.
-5. Create a new git repo.
-6. Set up git info in your project directory.
+5. Create a new git repo on bitbucket and add new remote origin.
+6. Do a 'git init' and do a commit & push to make sure all is dandy.
 7. Code.
 
 #### Notes ####
