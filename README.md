@@ -11,9 +11,9 @@ Sets up directory and necessary dependencies to get project started.
 ### Requires ###
 
 You will need the following installed **globally** on your machine first:
-. node.js
-. npm
-. gulp client
+- node.js
+- npm
+- gulp client
 
 ### How do I get set up? ###
 
@@ -28,6 +28,6 @@ You will need the following installed **globally** on your machine first:
 #### Notes ####
 
 Compressed files will be stored in a 'dist' folder:
-. minified CSS file
-. uglified JS file
-. HTML with multiple CSS and/or JS files combined
+- minified CSS file
+- uglified JS file
+- HTML with multiple CSS and/or JS files combined
