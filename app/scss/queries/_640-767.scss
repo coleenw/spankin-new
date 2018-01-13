@@ -1,0 +1,19 @@
+@media #{$below-tablet} {
+    /*
+     |----------------------------------------------------------------
+     |  Header
+     |----------------------------------------------------------------
+     */
+    .logo-column {
+        @include columns-class(12);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navigation-column {
+        @include columns-class(12);
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

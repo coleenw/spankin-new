@@ -1,0 +1,25 @@
+/*
+ |----------------------------------------------------------------
+ |  Banner Structure
+ |----------------------------------------------------------------
+ */
+.page-banner {
+    background-size: cover;
+    background-position: center;
+    background-color: rgba($light-grey, .5);
+
+    > .row {
+        @include ratio-height(480, 1800);
+    }
+}
+
+.banner-title {
+    @include font-size(42, 28);
+    padding-bottom: 0;
+    text-align: center;
+
+    ~ p {
+        padding-top: 10px;
+        text-align: center;
+    }
+}

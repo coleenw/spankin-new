@@ -2,6 +2,7 @@
 // Stuff to configure
 // ===================================
 var rootFolder = 'app';
+var showDir = false;
 
 var paths = {
   styles: {
@@ -47,8 +48,17 @@ function compress() {
 
 function watch() {
     gulp.watch(paths.styles.src, styles);
-    gulp.watch(rootFolder + '/*.html', browserSync.reload);
     gulp.watch(paths.scripts.src, browserSync.reload);
+    gulp.watch(rootFolder + '/*.html').on('change', browserSync.reload);
+}
+
+function livesync() {
+  browserSync.init({
+    server: {
+      baseDir: rootFolder + '/',
+      directory: showDir
+    },
+  })
 }
 
 function defaultTask(done) {
@@ -62,16 +72,8 @@ function defaultTask(done) {
     done();
 }
 
-gulp.task('browserSync', function() {
-  browserSync.init({
-    server: {
-      baseDir: rootFolder + ''
-    },
-  })
-})
-
+gulp.task('browserSync', livesync);
 gulp.task('compress', compress);
 gulp.task('watch', watch);
 gulp.task('build', gulp.parallel('browserSync', 'watch'));
 gulp.task('default', defaultTask);
-

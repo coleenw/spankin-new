@@ -1,0 +1,77 @@
+/*
+ |----------------------------------------------------------------
+ | Footer
+ |----------------------------------------------------------------
+ */
+.site-footer {
+	@include padding-top(80, 50);
+	@include padding-bottom(80, 50);
+    background-color: rgba($light-grey, .5);
+}
+
+
+/*
+ |----------------------------------------------------------------
+ |  Footer Menu
+ |----------------------------------------------------------------
+ */
+.footer-menu {
+	@include list-reset;
+	text-align: center;
+
+	li {
+		display: inline-block;
+		padding: 0 15px;
+		@include font-size(18);
+	}
+
+	a {
+		opacity: 1;
+
+		&:hover {
+			opacity: .7;
+		}
+	}
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Copyrights
+ |----------------------------------------------------------------
+ */
+.footer-copyright {
+	background: $light-grey;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	p {
+		padding-bottom: 0;
+	}
+}
+
+.copyright-column {
+
+}
+
+.site-copyright {
+	display: inline-block;
+	@include font-size(16, 14);
+}
+
+.privacy-menu {
+	display: inline-block;
+	@include list-reset;
+
+	li {
+		display: inline-block;
+		@include font-size(16, 14);
+	}
+}
+
+.designby-column {
+	text-align: right;
+}
+
+.site-credit {
+	@include font-size(16, 14);
+}

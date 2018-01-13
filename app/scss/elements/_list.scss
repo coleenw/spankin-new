@@ -1,0 +1,54 @@
+/*
+ |----------------------------------------------------------------
+ |  Lists
+ |----------------------------------------------------------------
+ */
+ul:not([class]),
+ol:not([class]) {
+    margin: 0 0 25px 10px;
+    list-style: none;
+    padding-left: 25px;
+
+    li {
+        @include font-size(18, 16);
+        line-height: 1.8;
+        position: relative;
+        margin-bottom: 10px;
+
+        &:before {
+            color: $highlight;
+            position: absolute;
+            left: -25px;
+        }
+    }
+
+    ul:not([class]),
+    ol:not([class]) {
+        margin: 0 0 25px 10px;
+        list-style: none;
+        padding-left: 25px;
+    }
+}
+
+ul:not([class]) {
+
+    li:before {
+        content: "●";
+        @include font-size(16);
+        @include fluid-prop('top', 3, 0);
+        color: $highlight;
+    }
+}
+
+ol:not([class]) {
+    counter-reset: my-counter;
+
+    li:before {
+        content: counter(my-counter) '.';
+        counter-increment: my-counter;
+        top: 1px;
+        color: $grey;
+        @include font-size(16);
+        font-weight: bold;
+    }
+}

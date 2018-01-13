@@ -1,0 +1,47 @@
+/*
+ |----------------------------------------------------------------
+ |  Font Faces
+ |----------------------------------------------------------------
+ */
+@mixin sans() {
+    font-family: 'Open Sans', sans-serif;
+}
+
+@mixin main-font() {
+    @include sans;
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Button Base/Mixin
+ |----------------------------------------------------------------
+ */
+@mixin button() {
+    transition-duration: .2s;
+    transition-property: background-color, color, border, opacity;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    padding: 12px 25px;
+    border-radius: 0;
+    min-width: 180px;
+    min-height: 50px;
+    cursor: pointer;
+    position: relative;
+
+    @include font-size(18, 16);
+    @include letter-spacing(100);
+    font-weight: $normal;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    outline: none;
+    color: $maintext;
+}
+
+@mixin button-style($style: 'default') {
+    @if $style == 'default' {
+        background-color: $highlight;
+    }
+}

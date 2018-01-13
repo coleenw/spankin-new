@@ -1,0 +1,140 @@
+/*
+ |----------------------------------------------------------------
+ |  Site Utility
+ |----------------------------------------------------------------
+ */
+.site-utility {
+    padding: 10px 0;
+    background: $highlight;
+}
+
+.utility-menu {
+    @include list-reset;
+    text-align: right;
+
+    li {
+        display: inline-block;
+
+        + li {
+            margin-left: 15px;
+        }
+    }
+
+    a {
+        opacity: 1;
+        color: white;
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Site Header
+ |----------------------------------------------------------------
+ */
+.site-header {
+    padding: 10px 0;
+    background: $light-grey;
+}
+
+.site-logo {
+
+}
+
+/*
+ |----------------------------------------------------------------
+ |  Burger Trigger
+ |----------------------------------------------------------------
+ */
+.fs-menu-trigger {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+
+    &:focus {
+        outline: none;
+    }
+
+    @media #{$above-tablet} {
+        display: none !important;
+    }
+}
+
+.fs-burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    height: 35px;
+    position: relative;
+    color: $highlight;
+
+    &:before, &:after {
+        content: "";
+        height: 3px;
+        background: currentColor;
+        opacity: 1;
+        transform: translate(0, 0);
+        transition-duration: 250ms;
+        transition-delay: 250ms;
+        transition-property: transform opacity;
+    }
+
+    .menu-opened & {
+
+        &:before {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition-delay: 0s;
+        }
+
+        &:after {
+            opacity: 0;
+            transform: translateX(10px);
+            transition-delay: 0s;
+        }
+    }
+}
+
+.burger-menu-text {
+    margin-right: 10px;
+    text-transform: uppercase;
+    @include letter-spacing(50);
+    @include font-size(14);
+    color: $maintext;
+}
+
+.burger-line {
+    position: relative;
+    background: transparent;
+    height: 3px;
+
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: currentColor;
+        transform-origin: center;
+        transition-duration: 500ms;
+        transition-delay: 0s;
+        transition-property: transform;
+    }
+
+    .menu-opened & {
+
+        &:before {
+            transform: rotate(45deg);
+            transition-delay: 250ms;
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+            transition-delay: 250ms;
+        }
+    }
+}
+
