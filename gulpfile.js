@@ -1,7 +1,7 @@
 // ===================================
 // Stuff to configure
 // ===================================
-var projectFoldere = 'anvil-smartsavvy';
+var projectFoldere = 'anvil-newproject';
 var rootFolder = 'app';
 var showDir = false;
 

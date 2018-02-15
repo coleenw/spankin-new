@@ -11,6 +11,7 @@ Sets up directory and necessary dependencies to get project started.
 ### Requires ###
 
 You will need the following installed **globally** on your machine first:
+
 - Node.js
 - Npm
 - Gulp
