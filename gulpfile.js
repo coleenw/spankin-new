@@ -1,6 +1,7 @@
 // ===================================
 // Stuff to configure
 // ===================================
+var projectFoldere = 'anvil-smartsavvy';
 var rootFolder = 'app';
 var showDir = false;
 
@@ -46,6 +47,18 @@ function compress() {
     .pipe(gulp.dest('dist'))
 }
 
+function compressCSSToTheme() {
+    return gulp.src(paths.styles.dest + '/**/*.css')
+    .pipe(gulpIf('*.css', cssnano()))
+    .pipe(gulp.dest(projectFoldere + '/styles/css'))
+}
+
+function compressJSToTheme() {
+    return gulp.src(paths.scripts.src)
+    .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulp.dest(projectFoldere + '/scripts'))
+}
+
 function watch() {
     gulp.watch(paths.styles.src, styles);
     gulp.watch(paths.scripts.src, browserSync.reload);
@@ -73,6 +86,7 @@ function defaultTask(done) {
 }
 
 gulp.task('browserSync', livesync);
+gulp.task('compressToTheme', compressCSSToTheme);
 gulp.task('compress', compress);
 gulp.task('watch', watch);
 gulp.task('build', gulp.parallel('browserSync', 'watch'));
