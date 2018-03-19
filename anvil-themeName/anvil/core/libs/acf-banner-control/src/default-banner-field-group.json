@@ -1,0 +1,47 @@
+{
+    "ID": null,
+    "fields": [
+        {
+            "ID": null,
+            "key": "field_forge_banner_title",
+            "label": "Banner Title",
+            "name": "banner_title",
+            "instructions": "<i>(Leave blank or use <code>{post_title}</code> for current page title, use <code>{term_name}</code> for current term name)</i>",
+            "type": "text"
+        },
+        {
+            "ID": null,
+            "key": "field_forge_banner_content",
+            "label": "Banner Content",
+            "name": "banner_content",
+            "type": "textarea",
+            "new_lines": "wpautop"
+        },
+        {
+            "ID": null,
+            "key": "field_forge_banner_background",
+            "label": "Banner Background",
+            "name": "banner_background",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "fs-full",
+            "library": "all"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "pages/_homepage.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "acf_after_title"
+}
