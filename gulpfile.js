@@ -69,6 +69,7 @@ function livesync() {
   browserSync.init({
     server: {
       baseDir: rootFolder + '/',
+      ghostMode: true,
       directory: showDir
     },
   })
