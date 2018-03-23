@@ -1,3 +1,10 @@
+
+/**
+ *  Paths
+================================================= */
+$imgfolder : unquote("../../images");
+// Example usage: background-image: url('#{$imgfolder}/bubbles-light.jpg');
+
 /**
  *  Colors
 ================================================= */
@@ -6,8 +13,9 @@ $white      : #ffffff;
 $grey       : #555;
 $light-grey : #ededed;
 
-$red        : #b0161d; // form validation
-$blue       : #2f9ba8;
+// form validation
+$red        : #b0161d;
+$green      : #88B04B;
 
 /**
  *  Text COlor

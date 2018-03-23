@@ -2,76 +2,44 @@
  |----------------------------------------------------------------
  | Footer
  |----------------------------------------------------------------
- */
-.site-footer {
-	@include padding-top(80, 50);
-	@include padding-bottom(80, 50);
-    background-color: rgba($light-grey, .5);
-}
+*/
 
 
 /*
  |----------------------------------------------------------------
- |  Footer Menu
+ |  FnS - Crafted With Love
  |----------------------------------------------------------------
- */
-.footer-menu {
-	@include list-reset;
-	text-align: center;
+*/
 
-	li {
-		display: inline-block;
-		padding: 0 15px;
-		@include font-size(18);
-	}
+ #crafted-with-love {
 
-	a {
-		opacity: 1;
+     a {
+         &:hover {
+             color: inherit; // Forge blue
+         }
+     }
 
-		&:hover {
-			opacity: .7;
-		}
-	}
-}
+     .love {
+         position: relative;
 
-/*
- |----------------------------------------------------------------
- |  Copyrights
- |----------------------------------------------------------------
- */
-.footer-copyright {
-	background: $light-grey;
-	padding-top: 10px;
-	padding-bottom: 10px;
+         &:before {
+             position: absolute;
+             z-index: 10;
+             bottom: 70%;
+             left: calc(100% - 6px);
+             content: "\f004";
+             @include font-awesome();
+             font-size: 8px;
+             color: #6cbdc4; // Forge blue
+             opacity: 0;
+             transition: bottom 0.3s ease 0.1s, opacity 0.25s ease;
+         }
 
-	p {
-		padding-bottom: 0;
-	}
-}
-
-.copyright-column {
-
-}
-
-.site-copyright {
-	display: inline-block;
-	@include font-size(16, 14);
-}
-
-.privacy-menu {
-	display: inline-block;
-	@include list-reset;
-
-	li {
-		display: inline-block;
-		@include font-size(16, 14);
-	}
-}
-
-.designby-column {
-	text-align: right;
-}
-
-.site-credit {
-	@include font-size(16, 14);
-}
+         &:hover {
+             &:before {
+                 bottom: 100%;
+                 opacity: 1;
+             }
+         }
+     }
+ }

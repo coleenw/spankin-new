@@ -4,9 +4,10 @@
  |----------------------------------------------------------------
  */
 @mixin font-awesome() {
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Solid";
     text-rendering: auto;
     font-smoothing:antialiased;
+    display: none;
 }
 
 /*
